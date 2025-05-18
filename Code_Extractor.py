@@ -43,7 +43,10 @@ def main():
                             break
                 if has_ignore_keyword: continue
                 code = line if code is None else code + '\n' +line
-    copy("No Code" if code is None else code)
+    if code is None: print("No code detected.")
+    else:
+        copy("No Code" if code is None else code)
+        print("Code copied to clipboard.")
 
 
 if __name__ == "__main__":
